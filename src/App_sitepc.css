@@ -137,10 +137,6 @@
     oklch(0.94 0.01 50));
   border: 1px solid oklch(0.88 0.01 50);
   box-shadow: 0 4px 6px -1px oklch(0.35 0.15 240 / 0.1);
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  min-width: 0;
 }
 .chapter-card:hover {
   transform: translateY(-2px);
@@ -210,73 +206,30 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-
-/* --------- RESPONSIVIDADE E USABILIDADE MOBILE --------- */
-
+/* Responsividade */
 @media (max-width: 768px) {
   .prose-fantasy {
     font-size: 1rem;
     line-height: 1.7;
-    padding: 0 1rem;
   }
-  .chapter-card {
-    padding: 1rem !important;
-    margin: 0.5rem 0 !important;
-    max-width: 100% !important;
-  }
-  .homepage-container {
-    padding: 1rem 0.5rem;
-    min-height: 100svh;
-  }
-  .homepage-container::before {
-    background: rgba(0,0,0,0.45); /* Melhora contraste para mobile */
-  }
-  .menu-desktop {
-    display: none !important;
-  }
-  .menu-mobile {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-}
-
-@media (max-width: 480px) {
-  .prose-fantasy {
-    font-size: 0.94rem;
-    padding: 0 0.5rem;
-  }
-  h1, h2, h3 {
-    font-size: 1.1em !important;
-    word-break: break-word;
-    margin-bottom: 0.8em;
-  }
-  .homepage-container {
-    padding: 0.5rem 0.2rem;
-  }
-}
-
-img, .homepage-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Estilos para o container da homepage com a imagem de fundo */
 .homepage-container {
-    background-image: url('/o-reino-central-mapa.jpg');
+    background-image: url('/o-reino-central-mapa.jpg'); /* Caminho corrigido para a imagem */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content:  flex-start; /* <-- Mude esta linha */;
     align-items: center;
     position: relative;
     z-index: 0;
     overflow: hidden;
 }
+
 .homepage-container::before {
     content: "";
     position: absolute;
@@ -284,9 +237,10 @@ img, .homepage-container img {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); */
+   /* background-color: rgba(0, 0, 0, 0.5);*/
     z-index: -1;
 }
+
 .homepage-container h1,
 .homepage-container p,
 .homepage-container button {
