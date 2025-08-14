@@ -1,0 +1,249 @@
+/* ===== ERROR MESSAGE BASE ===== */
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.error-message--inline {
+  display: inline-flex;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0.75rem;
+}
+
+/* ===== TIPOS DE ERRO ===== */
+.error-message--error {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.error-message--warning {
+  background-color: #fffbeb;
+  border-color: #fed7aa;
+  color: #92400e;
+}
+
+.error-message--info {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+/* ===== TAMANHOS ===== */
+.error-message--small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.error-message--medium {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.error-message--large {
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+}
+
+/* ===== LAYOUT INTERNO ===== */
+.error-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.error-icon-container {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.error-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.error-message--small .error-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.error-message--large .error-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ===== TEXTO ===== */
+.error-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.error-description {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ===== AÇÕES ===== */
+.error-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.error-retry-btn,
+.error-dismiss-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background: none;
+  color: currentColor;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.error-retry-btn:hover,
+.error-dismiss-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.error-retry-btn:focus,
+.error-dismiss-btn:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.retry-icon,
+.dismiss-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.error-dismiss-btn {
+  padding: 0.25rem;
+}
+
+/* ===== CORES ESPECÍFICAS POR TIPO ===== */
+.error-message--error .error-retry-btn:hover,
+.error-message--error .error-dismiss-btn:hover {
+  background-color: rgba(185, 28, 28, 0.1);
+}
+
+.error-message--warning .error-retry-btn:hover,
+.error-message--warning .error-dismiss-btn:hover {
+  background-color: rgba(146, 64, 14, 0.1);
+}
+
+.error-message--info .error-retry-btn:hover,
+.error-message--info .error-dismiss-btn:hover {
+  background-color: rgba(30, 64, 175, 0.1);
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  .error-message--error {
+    background-color: #451a1a;
+    border-color: #771d1d;
+    color: #fca5a5;
+  }
+
+  .error-message--warning {
+    background-color: #451a03;
+    border-color: #78350f;
+    color: #fbbf24;
+  }
+
+  .error-message--info {
+    background-color: #1e3a8a;
+    border-color: #3b82f6;
+    color: #93c5fd;
+  }
+
+  .error-retry-btn:hover,
+  .error-dismiss-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===== ANIMAÇÕES ===== */
+.error-message {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .error-message {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .error-content {
+    gap: 0.5rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .error-retry-btn,
+  .error-dismiss-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+.error-retry-btn:focus-visible,
+.error-dismiss-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* ===== ESTADOS ESPECIAIS ===== */
+.error-message--dismissible {
+  position: relative;
+}
+
+/* ===== INLINE ADJUSTMENTS ===== */
+.error-message--inline .error-content {
+  gap: 0.5rem;
+}
+
+.error-message--inline .error-title {
+  margin-bottom: 0;
+}
+
+.error-message--inline .error-actions {
+  margin-left: 0.5rem;
+}

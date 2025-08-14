@@ -1,0 +1,302 @@
+/* ===== OFFLINE INDICATOR BASE ===== */
+.offline-indicator {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  user-select: none;
+}
+
+/* ===== POSICIONAMENTO ===== */
+.offline-indicator--fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  animation: slideDown 0.3s ease forwards;
+}
+
+.offline-indicator--fixed-bottom {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease forwards;
+}
+
+.offline-indicator--top {
+  position: relative;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.offline-indicator--bottom {
+  position: relative;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+/* ===== TIPOS DE STATUS ===== */
+.offline-indicator--online {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.offline-indicator--offline {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.offline-indicator--reconnected {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+/* ===== VERSÃO COMPACTA ===== */
+.offline-indicator--compact {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 1.5rem;
+}
+
+.offline-indicator--compact .indicator-content {
+  gap: 0.375rem;
+}
+
+.offline-indicator--compact .status-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ===== CONTEÚDO INTERNO ===== */
+.indicator-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.indicator-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.status-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.indicator-message {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== PULSO PARA OFFLINE ===== */
+.connection-pulse {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.pulse-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* ===== BARRA DE PROGRESSO ===== */
+.reconnection-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.reconnection-progress {
+  height: 100%;
+  background-color: currentColor;
+  width: 100%;
+  transform: translateX(-100%);
+  animation: progressSlide linear forwards;
+}
+
+@keyframes progressSlide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ===== ANIMAÇÕES DE ENTRADA ===== */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== FLOATING DOT ESPECIAL ===== */
+.floating-dot.offline-indicator {
+  padding: 0.75rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-dot .indicator-content {
+  justify-content: center;
+}
+
+.floating-dot .indicator-message {
+  display: none;
+}
+
+.floating-dot .pulse-dot {
+  margin-left: 0;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  .offline-indicator--online {
+    background-color: #14532d;
+    color: #bbf7d0;
+    border-color: #166534;
+  }
+
+  .offline-indicator--offline {
+    background-color: #7f1d1d;
+    color: #fecaca;
+    border-color: #991b1b;
+  }
+
+  .offline-indicator--reconnected {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+    border-color: #3b82f6;
+  }
+
+  .offline-indicator--fixed-bottom {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .offline-indicator {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .offline-indicator--fixed-bottom {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .floating-dot.offline-indicator {
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+  }
+
+  .status-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .indicator-content {
+    gap: 0.375rem;
+  }
+}
+
+/* ===== ESTADOS ESPECIAIS ===== */
+.offline-indicator--offline .pulse-dot {
+  animation-duration: 1.5s;
+}
+
+.offline-indicator--reconnected {
+  animation: reconnectedGlow 0.5s ease;
+}
+
+@keyframes reconnectedGlow {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+@media (prefers-reduced-motion: reduce) {
+  .offline-indicator {
+    animation: none;
+  }
+  
+  .pulse-dot {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .reconnection-progress {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .offline-indicator {
+    display: none;
+  }
+}

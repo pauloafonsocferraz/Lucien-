@@ -1,0 +1,79 @@
+{
+  "visits": {
+    "total": 1247,
+    "coverPage": 892,
+    "daily": {
+      "2025-08-13": 47,
+      "2025-08-12": 89,
+      "2025-08-11": 156,
+      "2025-08-10": 134,
+      "2025-08-09": 98,
+      "2025-08-08": 201,
+      "2025-08-07": 167
+    },
+    "lastUpdate": "2025-08-13T18:57:00.000Z"
+  },
+  "news": [
+    {
+      "id": 3,
+      "title": "Sistema de Votação de Capas Está no Ar!",
+      "content": "Agora você pode votar na sua capa favorita para 'O Terceiro Olho'. Cada voto conta para a escolha final! Participe e ajude a decidir qual será a capa oficial do livro.",
+      "category": "Votação",
+      "date": "2025-08-13T15:30:00.000Z",
+      "author": "Paulo",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Novas Capas Candidatas Reveladas",
+      "content": "Três incríveis propostas de capa foram criadas para 'O Terceiro Olho'. Cada uma representa uma visão única da história: Atmosfera Mística, Aventura Épica e Versão Refinada. Em breve, você poderá votar!",
+      "category": "Design",
+      "date": "2025-08-12T10:15:00.000Z",
+      "author": "Paulo",
+      "featured": false
+    },
+    {
+      "id": 1,
+      "title": "Bem-vindos ao site oficial de O Terceiro Olho!",
+      "content": "Este é o espaço oficial para acompanhar todas as novidades sobre o livro 'O Terceiro Olho'. Aqui você encontrará atualizações sobre o processo de publicação, poderá participar de votações e deixar seus comentários. Obrigado por fazer parte desta jornada!",
+      "category": "Geral",
+      "date": "2025-08-10T08:00:00.000Z",
+      "author": "Paulo",
+      "featured": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "name": "Ana Silva",
+      "email": "ana@email.com",
+      "message": "Adorei as propostas de capa! A primeira tem uma atmosfera realmente envolvente.",
+      "page": "cover-vote",
+      "date": "2025-08-13T14:22:00.000Z",
+      "approved": true
+    },
+    {
+      "id": 2,
+      "name": "Carlos Santos",
+      "email": "carlos@email.com",
+      "message": "Quando sai o livro? Estou ansioso para ler a história completa!",
+      "page": "geral",
+      "date": "2025-08-13T11:45:00.000Z",
+      "approved": true
+    },
+    {
+      "id": 3,
+      "name": "Maria Oliveira",
+      "email": "",
+      "message": "A proposta 3 está incrível! O olho azul fica muito marcante.",
+      "page": "cover-vote",
+      "date": "2025-08-12T16:30:00.000Z",
+      "approved": true
+    }
+  ],
+  "votes": {
+    "cover1": 67,
+    "cover2": 43,
+    "cover3": 89
+  }
+}
