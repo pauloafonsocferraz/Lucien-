@@ -21,7 +21,7 @@ function App() {
       case 'about':
         return <AboutPage />;
       case 'chapters':
-        return <ChaptersPage />;
+        return <ChaptersPage setCurrentPage={setCurrentPage} />; {/* Ajustado aqui */}
       case 'author':
         return <AuthorPage setCurrentPage={setCurrentPage} />;
       case 'comments':

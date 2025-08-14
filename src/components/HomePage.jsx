@@ -2,8 +2,9 @@ import React from 'react';
 
 function HomePage({ setCurrentPage }) {
   const handleCapitulo1Click = () => {
+    // alert("Botão Clicado!"); // Você pode remover esta linha se não precisar mais do alerta
     setCurrentPage('chapters');
-    console.log("Navegando para o Capítulo 1 (ChaptersPage)...");
+    // console.log("Navegando para o Capítulo 1 (ChaptersPage)..."); // Você pode remover esta linha se não precisar mais do log
   };
 
   return (
@@ -18,7 +19,7 @@ function HomePage({ setCurrentPage }) {
       */}
       {/* Main Content - Centered and Styled */}
       {/* ALTERADO: p-8 para pt-4 pb-20 px-8 */}
-      <div className="relative z-1 text-center text-white pt-0 pb-1 px-10  max-w-1xl mx-5-x5 shadow-1xl">
+      <div className="relative z-1 text-center text-white pt-0 pb-1 px-10 max-w-1xl mx-5-x5 shadow-1xl">
         {/* ALTERADO: mb-6 para mb-32 */}
         <h1 className="center text-6xl md:text-x5 font-extrabold mb-115 leading-tight tracking-tight">
           <span className="text-orange-900">Conheça o mundo de Lucian</span>
@@ -28,7 +29,7 @@ function HomePage({ setCurrentPage }) {
           Vamos juntos construir essa aventura, conto e agradeço seus comentários!
         </p>*/}
         <button
-          className="bg-orange-900 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-30 ease-in-out transform hover:scale-10 shadow-lg"
+          className="bg-orange-900 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
           onClick={handleCapitulo1Click}
         >
           Capítulo 1: Inicie sua leitura agora e deixe sua opinião
@@ -39,3 +40,8 @@ function HomePage({ setCurrentPage }) {
 }
 
 export default HomePage;
+
+
+
+
+
