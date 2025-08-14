@@ -1,44 +1,35 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 /* DARK custom variant */
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -48,45 +39,33 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
-
 :root {
   --radius: 0.625rem;
-
   /* Paleta épica fantasia */
   --background: oklch(0.98 0.01 60);
   --foreground: oklch(0.15 0.02 30);
-
   --card: oklch(0.96 0.01 50);
   --card-foreground: oklch(0.15 0.02 30);
   --popover: oklch(0.96 0.01 50);
   --popover-foreground: oklch(0.15 0.02 30);
-
   --primary: oklch(0.35 0.15 240);
   --primary-foreground: oklch(0.98 0.01 60);
-
   --secondary: oklch(0.45 0.12 30);
   --secondary-foreground: oklch(0.98 0.01 60);
-
   --muted: oklch(0.92 0.01 50);
   --muted-foreground: oklch(0.45 0.02 30);
-
   --accent: oklch(0.55 0.18 60);
   --accent-foreground: oklch(0.98 0.01 60);
-
   --destructive: oklch(0.55 0.25 15);
-
   --border: oklch(0.88 0.01 50);
   --input: oklch(0.94 0.01 50);
   --ring: oklch(0.35 0.15 240);
 }
-
 /* ---------- ELEMENTOS CHAVES E ANIMAÇÕES ---------- */
-
 .chapter-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px -5px oklch(0.35 0.15 240 / 0.20);
 }
-
 .prose-fantasy {
   line-height: 1.8;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
@@ -103,7 +82,6 @@
 .prose-fantasy p { @apply mb-4 text-foreground/90; }
 .prose-fantasy strong { @apply font-semibold text-foreground; }
 .prose-fantasy em { @apply italic text-foreground/80; }
-
 .banner-aviso {
   background: linear-gradient(135deg, oklch(0.45 0.12 30) 80%, oklch(0.55 0.18 60));
   color: white;
@@ -119,7 +97,6 @@
   letter-spacing: 0.01em;
   line-height: 1.4;
 }
-
 @media (max-width: 480px) {
   .banner-aviso {
     font-size: 0.97rem;
@@ -128,24 +105,22 @@
     margin: 1.4rem auto 0;
   }
 }
-
 @keyframes mystical-glow {
   0%, 100% { box-shadow: 0 0 20px oklch(0.35 0.15 240 / 0.3);}
-  50%      { box-shadow: 0 0 30px oklch(0.55 0.18 60 / 0.4);}
+  50% { box-shadow: 0 0 30px oklch(0.55 0.18 60 / 0.4);}
 }
 .mystical-glow {
   animation: mystical-glow 3s ease-in-out infinite;
 }
 @keyframes blob {
-  0%   { transform: translate(0,0) scale(1);}
-  33%  { transform: translate(30px,-50px) scale(1.1);}
-  66%  { transform: translate(-20px,20px) scale(0.9);}
+  0% { transform: translate(0,0) scale(1);}
+  33% { transform: translate(30px,-50px) scale(1.1);}
+  66% { transform: translate(-20px,20px) scale(0.9);}
   100% { transform: translate(0,0) scale(1);}
 }
 .animate-blob { animation: blob 7s infinite cubic-bezier(0.6,0.01,0.4,1);}
 .animation-delay-2000 { animation-delay: 2s;}
 .animation-delay-4000 { animation-delay: 4s;}
-
 /* -------------- RESPONSIVIDADE E ACESSIBILIDADE -------------- */
 @media (max-width: 768px) {
   .prose-fantasy {
@@ -207,7 +182,38 @@
     outline-offset: 2px;
   }
 }
-
+/* Customizações para ocultar título e fixar botão só no mobile */
+@media (max-width: 768px) {
+  .map-title-mobile {
+    display: none !important;
+  }
+  .btn-capitulo {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 1.3rem;
+    margin: 0 auto;
+    z-index: 50;
+    width: calc(100vw - 2.6rem);
+    max-width: 340px;
+    border-radius: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.11), 0 2px 8px #6b2d10a8;
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: block;
+    padding: 1.1rem 0;
+    text-align: center;
+    background: #823b1e;
+    color: #fff;
+    border: none;
+    transition: background 0.2s;
+  }
+  .btn-capitulo:active,
+  .btn-capitulo:focus {
+    background: #a14621;
+    outline: 3px solid #caaa7e;
+  }
+}
 @media (max-width: 480px) {
   .prose-fantasy {
     font-size: 0.94rem;
@@ -222,14 +228,12 @@
     padding: 0.7rem 0.2rem;
   }
 }
-
 /* Generic img rules */
 img, .homepage-container img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
 /* ============ HOMEPAGE STYLES ============ */
 .homepage-container {
   background-image: url('/o-reino-central-mapa.jpg');
@@ -263,7 +267,6 @@ img, .homepage-container img {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
 /* Acessibilidade extra para focus em todos botões */
 button:focus-visible {
   outline: 3px solid #6a3e22;
