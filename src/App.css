@@ -59,88 +59,6 @@
   --border: oklch(0.88 0.01 50);
   --input: oklch(0.94 0.01 50);
   --ring: oklch(0.35 0.15 240);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.94 0.01 50);
-  --sidebar-foreground: oklch(0.15 0.02 30);
-  --sidebar-primary: oklch(0.35 0.15 240);
-  --sidebar-primary-foreground: oklch(0.98 0.01 60);
-  --sidebar-accent: oklch(0.92 0.01 50);
-  --sidebar-accent-foreground: oklch(0.15 0.02 30);
-  --sidebar-border: oklch(0.88 0.01 50);
-  --sidebar-ring: oklch(0.35 0.15 240);
-}
-.dark {
-  /* Tema escuro épico - noite mística */
-  --background: oklch(0.08 0.02 240); /* Azul muito escuro */
-  --foreground: oklch(0.92 0.01 60); /* Dourado claro */
-  --card: oklch(0.12 0.02 240);
-  --card-foreground: oklch(0.92 0.01 60);
-  --popover: oklch(0.12 0.02 240);
-  --popover-foreground: oklch(0.92 0.01 60);
-  --primary: oklch(0.65 0.18 240); /* Azul místico brilhante */
-  --primary-foreground: oklch(0.08 0.02 240);
-  --secondary: oklch(0.25 0.05 30);
-  --secondary-foreground: oklch(0.92 0.01 60);
-  --muted: oklch(0.18 0.02 240);
-  --muted-foreground: oklch(0.65 0.01 60);
-  --accent: oklch(0.75 0.20 60); /* Dourado brilhante */
-  --accent-foreground: oklch(0.08 0.02 240);
-  --destructive: oklch(0.65 0.25 15);
-  --border: oklch(0.22 0.02 240);
-  --input: oklch(0.16 0.02 240);
-  --ring: oklch(0.65 0.18 240);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.12 0.02 240);
-  --sidebar-foreground: oklch(0.92 0.01 60);
-  --sidebar-primary: oklch(0.65 0.18 240);
-  --sidebar-primary-foreground: oklch(0.08 0.02 240);
-  --sidebar-accent: oklch(0.18 0.02 240);
-  --sidebar-accent-foreground: oklch(0.92 0.01 60);
-  --sidebar-border: oklch(0.22 0.02 240);
-  --sidebar-ring: oklch(0.65 0.18 240);
-}
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Georgia', 'Times New Roman', serif;
-  }
-}
-/* Estilos personalizados para o tema épico */
-.hero-gradient {
-  background: linear-gradient(135deg,
-    oklch(0.35 0.15 240) 0%,
-    oklch(0.45 0.12 30) 50%,
-    oklch(0.55 0.18 60) 100%);
-}
-.text-gradient {
-  background: linear-gradient(135deg,
-    oklch(0.35 0.15 240),
-    oklch(0.55 0.18 60));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.chapter-card {
-  background: linear-gradient(145deg,
-    oklch(0.96 0.01 50),
-    oklch(0.94 0.01 50));
-  border: 1px solid oklch(0.88 0.01 50);
-  box-shadow: 0 4px 6px -1px oklch(0.35 0.15 240 / 0.1);
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  min-width: 0;
 }
 .chapter-card:hover {
   transform: translateY(-2px);
@@ -148,13 +66,11 @@
 }
 .prose-fantasy {
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
 }
 .prose-fantasy h1 {
   @apply text-3xl font-bold mb-6;
-  background: linear-gradient(135deg,
-    oklch(0.35 0.15 240),
-    oklch(0.55 0.18 60));
+  background: linear-gradient(135deg, oklch(0.35 0.15 240), oklch(0.55 0.18 60));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -174,7 +90,31 @@
 .prose-fantasy em {
   @apply italic text-foreground/80;
 }
-/* Animações épicas */
+/* Banner/aviso principal (Capítulo) */
+.banner-aviso {
+  background: linear-gradient(135deg, oklch(0.45 0.12 30) 80%, oklch(0.55 0.18 60));
+  color: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px -2px #0008;
+  padding: 1.1rem 1.2rem;
+  text-align: center;
+  max-width: 90vw;
+  margin: 2rem auto 0 auto;
+  font-size: 1.13rem;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  .banner-aviso {
+    font-size: 0.97rem;
+    border-radius: 14px;
+    padding: 0.85rem 0.6rem;
+    margin: 1.4rem auto 0 auto;
+  }
+}
+
 @keyframes mystical-glow {
   0%, 100% {
     box-shadow: 0 0 20px oklch(0.35 0.15 240 / 0.3);
@@ -188,18 +128,10 @@
 }
 /* Animação Blob para HomePage */
 @keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+  0% { transform: translate(0px, 0px) scale(1);}
+  33% { transform: translate(30px, -50px) scale(1.1);}
+  66% { transform: translate(-20px, 20px) scale(0.9);}
+  100% { transform: translate(0px, 0px) scale(1);}
 }
 .animate-blob {
   animation: blob 7s infinite cubic-bezier(0.6, 0.01, 0.4, 1);
@@ -210,9 +142,7 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
-
-/* --------- RESPONSIVIDADE E USABILIDADE MOBILE --------- */
-
+/* RESPONSIVIDADE EXTRAS NO MOBILE */
 @media (max-width: 768px) {
   .prose-fantasy {
     font-size: 1rem;
@@ -225,11 +155,13 @@
     max-width: 100% !important;
   }
   .homepage-container {
-    padding: 1rem 0.5rem;
+    padding: 1.2rem 0.7rem;
     min-height: 100svh;
   }
   .homepage-container::before {
-    background: rgba(0,0,0,0.45); /* Melhora contraste para mobile */
+    background: rgba(0,0,0,0.58);
+    /* melhora contraste para mobile */
+    backdrop-filter: blur(2px);
   }
   .menu-desktop {
     display: none !important;
@@ -240,22 +172,20 @@
     align-items: flex-end;
   }
 }
-
 @media (max-width: 480px) {
   .prose-fantasy {
     font-size: 0.94rem;
     padding: 0 0.5rem;
   }
   h1, h2, h3 {
-    font-size: 1.1em !important;
+    font-size: 1.06em !important;
     word-break: break-word;
     margin-bottom: 0.8em;
   }
   .homepage-container {
-    padding: 0.5rem 0.2rem;
+    padding: 0.7rem 0.2rem;
   }
 }
-
 img, .homepage-container img {
   max-width: 100%;
   height: auto;
@@ -276,6 +206,7 @@ img, .homepage-container img {
     position: relative;
     z-index: 0;
     overflow: hidden;
+    padding: 0 6vw;
 }
 .homepage-container::before {
     content: "";
@@ -284,7 +215,7 @@ img, .homepage-container img {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* background-color: rgba(0, 0, 0, 0.5);*/
     z-index: -1;
 }
 .homepage-container h1,

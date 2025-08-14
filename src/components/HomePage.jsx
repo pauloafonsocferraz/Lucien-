@@ -32,7 +32,7 @@ function HomePage({ setCurrentPage }) {
           className="bg-orange-900 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
           onClick={handleCapitulo1Click}
         >
-          Capítulo 1: Inicie sua leitura agora e deixe sua opinião
+          Capítulo 1
         </button>
       </div>
     </div>
