@@ -67,7 +67,7 @@ const CoverVotePage = () => {
             </h1>
           </div>
           <p className="text-xl text-muted-foreground mb-6">
-            Ajude-nos a escolher a capa perfeita para "O Terceiro Olho: O Despertar das Marcas"
+            Ajude-nos a escolher a capa perfeita para "Magia Plena: O Despertar das Marcas"
           </p>
           <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">

@@ -8,7 +8,7 @@ import { MessageCircle, Send, Star, User, Calendar, Heart } from 'lucide-react';
 
 const CommentsPage = () => {
   const [comments, setComments] = useState([
-    {
+    /*{
       id: 1,
       name: "Ana Silva",
       date: "2024-12-08",
@@ -31,8 +31,8 @@ const CommentsPage = () => {
       rating: 4,
       comment: "Adorei a representatividade do protagonista. É ótimo ver um herói brasileiro multirracial em fantasia épica. A história tem muito potencial!",
       likes: 15
-    }
-  ]);
+    }*/
+  ])
 
   const [newComment, setNewComment] = useState({
     name: '',
@@ -74,7 +74,7 @@ const CommentsPage = () => {
             Comentários
           </h1>
           <p className="text-xl text-muted-foreground">
-            Compartilhe seus pensamentos sobre "O Terceiro Olho"
+            Compartilhe seus pensamentos e nos ajude a criar um lugar especial
           </p>
         </div>
 
@@ -246,7 +246,7 @@ const CommentsPage = () => {
               Gostou da História?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Ajude outros leitores a descobrir "O Terceiro Olho" compartilhando 
+              Ajude outros leitores a descobrir "A Magia Plena" compartilhando 
               sua experiência e deixando sua avaliação!
             </p>
             <div className="flex justify-center space-x-1 mb-4">

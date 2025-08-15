@@ -12,7 +12,7 @@ const AboutPage = () => {
             Sobre a Obra
           </h1>
           <p className="text-xl text-muted-foreground">
-            Conheça o universo épico de "O Terceiro Olho"
+            Conheça o universo épico da Magia Plena
           </p>
         </div>
 
@@ -83,7 +83,7 @@ const AboutPage = () => {
                   <Eye className="h-8 w-8 text-accent" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Livro 3</h3>
-                <h4 className="font-medium text-accent mb-2">O Terceiro Olho</h4>
+                <h4 className="font-medium text-accent mb-2">Magia Plena</h4>
                 <p className="text-sm text-muted-foreground">
                   A manifestação final do poder e a batalha pelo destino do mundo.
                 </p>

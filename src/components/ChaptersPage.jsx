@@ -72,16 +72,15 @@ const ChaptersPage = () => {
               <Card className="chapter-card opacity-60">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline">Capítulo 3</Badge>
+                    <Badge variant="outline">Capítulo 4</Badge>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="h-4 w-4 mr-1" />
                       Em breve
                     </div>
                   </div>
-                  <CardTitle className="text-lg">A Jornada Começa</CardTitle>
+                  <CardTitle className="text-lg">Intrigas</CardTitle>
                   <CardDescription>
-                    Lucian deixa Millhaven para trás e inicia sua jornada em direção 
-                    à capital, carregando seus segredos e medos.
+                     Descubra as cortes e Magos da mão
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

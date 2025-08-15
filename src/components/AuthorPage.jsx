@@ -16,7 +16,7 @@ const AuthorPage = ({ setCurrentPage }) => {
             Sobre o Autor
           </h1>
           <p className="text-xl text-muted-foreground">
-            Criador do universo de "O Terceiro Olho"
+            Criador do universo de "A Magia Plena"
           </p>
         </div>
 
@@ -37,7 +37,7 @@ const AuthorPage = ({ setCurrentPage }) => {
             </p>
             <p>
               Essa pergunta deu origem a Lucian, um jovem brasileiro multirracial com olhos de cores 
-              diferentes, que se tornou o protagonista de "O Terceiro Olho". Através de sua história, 
+              diferentes, que se tornou o protagonista de "A Magia Plena". Através de sua história, 
               exploro temas universais como identidade, pertencimento, o peso das escolhas e o 
               equilíbrio entre luz e sombra que existe em todos nós.
             </p>
@@ -92,7 +92,7 @@ const AuthorPage = ({ setCurrentPage }) => {
           </CardHeader>
           <CardContent className="prose-fantasy">
             <p>
-              "O Terceiro Olho" é mais do que uma saga de fantasia épica - é uma reflexão sobre 
+              "A Magia Plena" é mais do que uma saga de fantasia épica - é uma reflexão sobre 
               identidade, aceitação e o poder das escolhas. Através de Lucian, exploro as 
               dificuldades de crescer sendo diferente, a busca por pertencimento e a descoberta 
               de que nossa maior força pode vir justamente daquilo que nos torna únicos.
@@ -120,7 +120,7 @@ const AuthorPage = ({ setCurrentPage }) => {
           <CardHeader>
             <CardTitle>Projetos Futuros</CardTitle>
             <CardDescription>
-              O que está por vir no universo de "O Terceiro Olho"
+              O que está por vir no universo de "A Magia Plena"
             </CardDescription>
           </CardHeader>
           <CardContent>

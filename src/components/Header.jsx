@@ -29,7 +29,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
               <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-accent animate-pulse" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gradient">A Saga de Lucian</h1>
+              <h1 className="text-xl font-bold text-gradient">A Saga da Magia Plena</h1>
               <p className="text-xs text-muted-foreground">Jornada Épica de Fantasia</p>
             </div>
           </div>
