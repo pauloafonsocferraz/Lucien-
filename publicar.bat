@@ -54,7 +54,7 @@ echo.
 
 :: 5. Fazer o deploy para producao usando Netlify CLI
 echo [Deploy] Iniciando o deploy para Netlify em producao...
-netlify deploy --prod --dir=build
+netlify deploy --prod --dir=dist
 if %errorlevel% neq 0 (
     echo ERRO: Falha ao realizar o deploy no Netlify.
     goto :eof
